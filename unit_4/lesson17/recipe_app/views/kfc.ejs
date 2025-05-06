@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+
+<h2>🍗 KFC Menu</h2>
+
+<% if (kfcItems.length > 0) { %>
+  <ul>
+    <% kfcItems.forEach(item => { %>
+      <li>
+        <strong><%= item.name %></strong> - R<%= item.price %> 
+        <% if (item.spicy) { %> <span style="color: red;">🌶️ Spicy</span> <% } %>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No items in the menu yet.</p>
+<% } %>
+
+<%- include("partials/footer") %>
